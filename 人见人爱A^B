@@ -1,0 +1,21 @@
+#include<stdio.h>
+int power(int a, int n,int m) {
+        int ans = 1, tem = a;
+        while (n)
+        {
+            if (n & 1)
+                ans = ans * tem % m;
+            tem = tem * tem % m;
+            n /= 2;
+        }
+        return ans;}
+int main(){
+    int a, b, i, j;
+    long long n;
+    while (scanf("%d%d",&a,&b)!=EOF&&a&&b)
+    {
+        n = power(a, b,1000);
+            printf("%d\n", n);
+    }
+    return 0;
+}
