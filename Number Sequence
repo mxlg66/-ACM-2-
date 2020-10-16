@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+	int d,b,c,i;
+	while (scanf("%d%d%d", &d,&b,&c) != EOF) {
+		int a[100];
+		if (!d || !b || !c) break;
+		a[1] = 1;
+		a[2] = 1;
+		for (i = 3; i < 48; i++)
+			a[i] = (d* a[i - 1] + b * a[i - 2])%7;
+		printf("%d\n", a[c % 48]);
+	}
+		return 0;
+	}
